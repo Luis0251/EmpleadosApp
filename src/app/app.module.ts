@@ -3,10 +3,14 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { ListEmpleadoComponent } from './list-empleado/list-empleado.component';
+import { CaracterEmplComponent } from './caracter-empl/caracter-empl.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListEmpleadoComponent,
+    CaracterEmplComponent
   ],
   imports: [
     BrowserModule,FormsModule
