@@ -1,28 +1,14 @@
-<div class="container">
-  <div class="col"><h1>{{title}}</h1></div>
-  <br><br>
-  <form class="form-group row" role="form">
-    <div class="form-group col-md-3">
-      <label for="nombre">Nombre:</label>
-      <input type="text" class="form-control" name="nombre" placeholder="Nombre" id="nombre" [(ngModel)]="cuadroNombre"/>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Home</a>
+      <a class="nav-item nav-link" href="#">Contact</a>
+      <a class="nav-item nav-link" href="#">Quienes Somos</a>
     </div>
-    <div class="form-group col-md-3">
-      <label for="apellido">Apellido:</label>
-    <input type="text" class="form-control" name="apellido" placeholder="Apellido" id="apellido" [(ngModel)]="cuadroApellido"/>
-    </div>
-    <div class="form-group col-md-3">
-      <label for="cargo">Cargo:</label>
-      <input type="text" class="form-control" name="cargo" placeholder="Cargo" id="cargo" [(ngModel)]="cuadroCargo"/>
-    </div>
-    <div class="form-group col-md-3">
-      <label for="salario">Salario:</label>
-      <input type="number" class="form-control" name="salario" placeholder="Salario" id="salario" [(ngModel)]="cuadroSalario"/>
-    </div>
-    <div class="col">
-      <button type="submit" class="btn btn-primary" (click)="registrar()">Ingresar</button>
-    </div>
-  </form>
-</div>
-<app-list-empleado *ngFor=" let empleado of empleados" [empleadoList]="empleado"></app-list-empleado>
-<br><br><br>
-
+  </div>
+</nav>
+<router-outlet></router-outlet>
