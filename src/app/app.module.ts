@@ -10,7 +10,13 @@ import { DataService } from './empleados.service';
 import { HomeComponent } from './home/home.component';
 import { QuienSomosComponent } from './quien-somos/quien-somos.component';
 import { ContactComponent } from './contact/contact.component';
+import { RouterModule, Routes } from '@angular/router';
 
+const appRoutes: Routes = [
+  {path: 'contact', component: ContactComponent},
+  {path: '', component: HomeComponent},
+  {path: 'QuienesSomoes', component:QuienSomosComponent}
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +27,7 @@ import { ContactComponent } from './contact/contact.component';
     ContactComponent
   ],
   imports: [
-    BrowserModule,FormsModule
+    BrowserModule,FormsModule,RouterModule.forRoot(appRoutes)
   ],
   providers: [ServicioEmpleadoService,DataService],
   bootstrap: [AppComponent]
