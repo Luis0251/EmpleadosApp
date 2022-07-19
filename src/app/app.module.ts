@@ -16,7 +16,8 @@ import { ActualizarComponent } from './actualizar/actualizar.component';
 const appRoutes: Routes = [
   {path: 'contact', component: ContactComponent},
   {path: '', component: HomeComponent},
-  {path: 'QuienesSomos', component:QuienSomosComponent}
+  {path: 'QuienesSomos', component:QuienSomosComponent},
+  {path: 'actualizar', component:ActualizarComponent}
 ]
 @NgModule({
   declarations: [
