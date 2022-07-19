@@ -15,7 +15,7 @@ import { RouterModule, Routes } from '@angular/router';
 const appRoutes: Routes = [
   {path: 'contact', component: ContactComponent},
   {path: '', component: HomeComponent},
-  {path: 'QuienesSomoes', component:QuienSomosComponent}
+  {path: 'QuienesSomos', component:QuienSomosComponent}
 ]
 @NgModule({
   declarations: [
