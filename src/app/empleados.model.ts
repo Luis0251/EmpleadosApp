@@ -8,5 +8,5 @@ this.salario = salario;
 nombre: string ="";
 apellido: string ="";
 cargo: string ="";
-salario: Number = 0;
+salario: number = 0;
 }
