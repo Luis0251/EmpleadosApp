@@ -24,5 +24,5 @@
   </div>
 </form>
 </div>
-<app-list-empleado *ngFor=" let empleado of empleados" [empleadoList]="empleado"></app-list-empleado>
+<app-list-empleado *ngFor=" let empleado of empleados; let i=index" [empleadoList]="empleado" [indice]="i"></app-list-empleado>
 <br><br><br>

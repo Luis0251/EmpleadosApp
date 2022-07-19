@@ -8,6 +8,7 @@ import { Empleados } from '../empleados.model';
 })
 export class ListEmpleadoComponent implements OnInit {
     @Input() empleadoList : Empleados;
+    @Input() indice: number;
   ngOnInit(): void {
   }
     newCaracter = [''];

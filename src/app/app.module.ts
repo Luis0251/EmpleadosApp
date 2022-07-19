@@ -17,7 +17,7 @@ const appRoutes: Routes = [
   {path: 'contact', component: ContactComponent},
   {path: '', component: HomeComponent},
   {path: 'QuienesSomos', component:QuienSomosComponent},
-  {path: 'actualizar', component:ActualizarComponent}
+  {path: 'actualizar/:id', component:ActualizarComponent}
 ]
 @NgModule({
   declarations: [

@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      {{empleadoList.nombre}} {{empleadoList.apellido}} {{empleadoList.cargo}} {{empleadoList.salario}}
+      <a [routerLink]="['/actualizar',indice]">{{indice + 1}} {{empleadoList.nombre}} {{empleadoList.apellido}} {{empleadoList.cargo}} {{empleadoList.salario}}</a>
     </div>
     <app-caracter-empl (caracter)="addCaracters($event)"></app-caracter-empl>
     <ul>

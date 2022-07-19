@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Empleados } from '../empleados.model';
 
 @Component({
   selector: 'app-actualizar',
@@ -8,8 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class ActualizarComponent implements OnInit {
 
   constructor() { }
-
+  empleados:Empleados[] = [];
   ngOnInit(): void {
   }
+  actualizar(){
 
+  }
+  cuadroNombre:string="";
+  cuadroApellido:string="";
+  cuadroCargo:string="";
+  cuadroSalario:number=0;
 }
