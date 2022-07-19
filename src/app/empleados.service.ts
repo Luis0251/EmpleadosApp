@@ -16,5 +16,9 @@ export class DataService {
     this.mensajeServ.messageService("El empleado registrado con nombre" + "\n" + empleado.nombre + "Tendra un salario de" + "\n" + empleado.salario);
     this.empleados.push(empleado);
   }
+  encontrar(indice:number){
+    let empleado:Empleados = this.empleados[indice];
+    return empleado;
+  }
   constructor(private mensajeServ:ServicioEmpleadoService) { }
 }

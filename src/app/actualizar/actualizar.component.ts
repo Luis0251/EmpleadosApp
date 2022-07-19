@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Empleados } from '../empleados.model';
+import { DataService } from '../empleados.service';
 
 @Component({
   selector: 'app-actualizar',
@@ -8,9 +10,17 @@ import { Empleados } from '../empleados.model';
 })
 export class ActualizarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:ActivatedRoute, private dataService:DataService) { }
   empleados:Empleados[] = [];
   ngOnInit(): void {
+    this.empleados=this.dataService.empleados;
+    this.indice=this.router.snapshot.params['id']
+    let empleado:Empleados=this.dataService.encontrar(this.indice)
+    this.cuadroNombre = empleado.nombre;
+    this.cuadroApellido = empleado.apellido;
+    this.cuadroSalario = empleado.salario;
+    this.cuadroCargo = empleado.cargo;
+
   }
   actualizar(){
 
@@ -18,5 +28,6 @@ export class ActualizarComponent implements OnInit {
   cuadroNombre:string="";
   cuadroApellido:string="";
   cuadroCargo:string="";
-  cuadroSalario:number=0;
+  cuadroSalario:Number=0;
+  indice:number;
 }
