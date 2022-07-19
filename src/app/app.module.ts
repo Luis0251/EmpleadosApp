@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { QuienSomosComponent } from './quien-somos/quien-somos.component';
 import { ContactComponent } from './contact/contact.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ActualizarComponent } from './actualizar/actualizar.component';
 
 const appRoutes: Routes = [
   {path: 'contact', component: ContactComponent},
@@ -24,7 +25,8 @@ const appRoutes: Routes = [
     CaracterEmplComponent,
     HomeComponent,
     QuienSomosComponent,
-    ContactComponent
+    ContactComponent,
+    ActualizarComponent
   ],
   imports: [
     BrowserModule,FormsModule,RouterModule.forRoot(appRoutes)
