@@ -12,12 +12,14 @@ import { QuienSomosComponent } from './quien-somos/quien-somos.component';
 import { ContactComponent } from './contact/contact.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ActualizarComponent } from './actualizar/actualizar.component';
+import { ComponenErrorComponent } from './componen-error/componen-error.component';
 
 const appRoutes: Routes = [
   {path: 'contact', component: ContactComponent},
   {path: '', component: HomeComponent},
   {path: 'QuienesSomos', component:QuienSomosComponent},
-  {path: 'actualizar/:id', component:ActualizarComponent}
+  {path: 'actualizar/:id', component:ActualizarComponent},
+  {path: '**', component:ComponenErrorComponent},
 ]
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ const appRoutes: Routes = [
     HomeComponent,
     QuienSomosComponent,
     ContactComponent,
-    ActualizarComponent
+    ActualizarComponent,
+    ComponenErrorComponent
   ],
   imports: [
     BrowserModule,FormsModule,RouterModule.forRoot(appRoutes)
