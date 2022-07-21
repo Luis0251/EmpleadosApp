@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Empleados } from '../empleados.model';
 import { DataService } from '../empleados.service';
 
@@ -10,7 +10,7 @@ import { DataService } from '../empleados.service';
 })
 export class ActualizarComponent implements OnInit {
 
-  constructor(private router:ActivatedRoute, private dataService:DataService) { }
+  constructor(private router:ActivatedRoute, private dataService:DataService,private routers: Router) { }
   empleados:Empleados[] = [];
   ngOnInit(): void {
     this.empleados=this.dataService.empleados;
@@ -23,11 +23,18 @@ export class ActualizarComponent implements OnInit {
 
   }
   actualizar(){
-
+    let miEmpleados = new Empleados(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
+    //this.miServicio.messageService("el nombre del empleado es" + miEmpleados.nombre)
+    this.dataService.actualizarEm(this.indice,miEmpleados);
+    this.routers.navigate(['']);
+  }
+  eliminar(){
+    this.dataService.eliminarEm(this.indice);
+    this.routers.navigate(['']);
   }
   cuadroNombre:string="";
   cuadroApellido:string="";
   cuadroCargo:string="";
-  cuadroSalario:Number=0;
+  cuadroSalario:number=0;
   indice:number;
 }

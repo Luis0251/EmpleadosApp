@@ -20,5 +20,15 @@ export class DataService {
     let empleado:Empleados = this.empleados[indice];
     return empleado;
   }
+  actualizarEm(indice:number, empleado:Empleados){
+    let newEmpleado = this.empleados[indice];
+    newEmpleado.nombre=empleado.nombre;
+    newEmpleado.apellido=empleado.apellido;
+    newEmpleado.cargo=empleado.cargo;
+    newEmpleado.salario=empleado.salario;
+  }
+  eliminarEm(indice:number){
+    this.empleados.splice(indice,1);
+  }
   constructor(private mensajeServ:ServicioEmpleadoService) { }
 }
