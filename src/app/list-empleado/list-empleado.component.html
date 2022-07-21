@@ -1,11 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <a [routerLink]="['/actualizar',indice]">{{indice + 1}} {{empleadoList.nombre}} {{empleadoList.apellido}} {{empleadoList.cargo}} {{empleadoList.salario}}</a>
+     {{indice + 1}} {{empleadoList.nombre}} {{empleadoList.apellido}} {{empleadoList.cargo}} {{empleadoList.salario}}
+     <a [routerLink]="['/actualizar',indice]" [queryParams]="{accion:'1'}">Actualizar</a>
+     <a [routerLink]="['/actualizar',indice]" [queryParams]="{accion:'2'}">EliminaR</a>
+    </div>
     </div>
     <app-caracter-empl (caracter)="addCaracters($event)"></app-caracter-empl>
     <ul>
       <li *ngFor="let caracter of newCaracter">{{caracter}}</li>
     </ul>
   </div>
-</div>
