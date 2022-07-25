@@ -13,6 +13,8 @@ import { ContactComponent } from './contact/contact.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ActualizarComponent } from './actualizar/actualizar.component';
 import { ComponenErrorComponent } from './componen-error/componen-error.component';
+import { DataSql } from './data.service';
+import {HttpClientModule} from '@angular/common/http';
 
 const appRoutes: Routes = [
   {path: 'contact', component: ContactComponent},
@@ -33,9 +35,10 @@ const appRoutes: Routes = [
     ComponenErrorComponent
   ],
   imports: [
-    BrowserModule,FormsModule,RouterModule.forRoot(appRoutes)
+    BrowserModule,FormsModule,RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
-  providers: [ServicioEmpleadoService,DataService],
+  providers: [ServicioEmpleadoService,DataService,DataSql],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

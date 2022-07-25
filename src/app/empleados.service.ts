@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { DataSql } from './data.service';
 import { Empleados } from './empleados.model';
 import { ServicioEmpleadoService } from './servicio-empleado.service';
 
@@ -6,15 +7,21 @@ import { ServicioEmpleadoService } from './servicio-empleado.service';
   providedIn: 'root'
 })
 export class DataService {
-  empleados:Empleados[] = [
+  constructor(private mensajeServ:ServicioEmpleadoService, private data:DataSql) { }
+  empleados:Empleados[] = [];
+  obtenerEmpl(){
+    return this.data.cargarEmpleados();
+  }
+  /*empleados:Empleados[] = [
     new Empleados("jua","carlos","CEO",50000),
     new Empleados("jua","carlos","Director",40000),
     new Empleados("jua","carlos","Admin",30000),
     new Empleados("jua","carlos","Jefe de seccion",60000),
-  ];
+  ];*/
   agregarEm(empleado:Empleados){
     this.mensajeServ.messageService("El empleado registrado con nombre" + "\n" + empleado.nombre + "Tendra un salario de" + "\n" + empleado.salario);
     this.empleados.push(empleado);
+    this.data.guardarEmpleados(this.empleados);
   }
   encontrar(indice:number){
     let empleado:Empleados = this.empleados[indice];
@@ -30,5 +37,5 @@ export class DataService {
   eliminarEm(indice:number){
     this.empleados.splice(indice,1);
   }
-  constructor(private mensajeServ:ServicioEmpleadoService) { }
+
 }

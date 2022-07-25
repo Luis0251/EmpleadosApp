@@ -9,10 +9,11 @@ import { DataService } from '../empleados.service';
 })
 export class HomeComponent implements OnInit {
   title = 'EmpleadosApp';
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService,) { }
   empleados:Empleados[] = [];
   ngOnInit(): void {
-    this.empleados = this.dataService.empleados;
+   this.dataService.obtenerEmpl().subscribe(data => {console.log(data)});
+    //this.empleados = this.dataService.empleados;
   }
   registrar(){
     let miEmpleados = new Empleados(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
