@@ -12,7 +12,10 @@ export class HomeComponent implements OnInit {
   constructor(private dataService: DataService,) { }
   empleados:Empleados[] = [];
   ngOnInit(): void {
-   this.dataService.obtenerEmpl().subscribe(data => {console.log(data)});
+   this.dataService.obtenerEmpl().subscribe(data => {console.log(data)
+    this.empleados = Object.values(data)
+    this.dataService.SetEmpleados(this.empleados);
+  });
     //this.empleados = this.dataService.empleados;
   }
   registrar(){

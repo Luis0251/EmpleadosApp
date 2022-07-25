@@ -9,6 +9,9 @@ import { ServicioEmpleadoService } from './servicio-empleado.service';
 export class DataService {
   constructor(private mensajeServ:ServicioEmpleadoService, private data:DataSql) { }
   empleados:Empleados[] = [];
+  SetEmpleados(misEmpleados:Empleados[]){
+    this.empleados = misEmpleados;
+  }
   obtenerEmpl(){
     return this.data.cargarEmpleados();
   }
