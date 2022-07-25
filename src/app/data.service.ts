@@ -17,7 +17,7 @@ guardarEmpleados(empleados:Empleados[]){
 }
 
 actualizarEmpleados(indice:number,empleados:Empleados){
-let url = 'https://app-angular-376e9-default-rtdb.firebaseio.com/datos/'+indice+'json'
+let url = 'https://app-angular-376e9-default-rtdb.firebaseio.com/datos/'+indice+'.json'
 this.httpClient.put(url,empleados).subscribe(
     response => console.log("Se han actualizado los empleados " + response),
     error => console.log("Error" + error));
