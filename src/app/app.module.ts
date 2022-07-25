@@ -15,6 +15,7 @@ import { ActualizarComponent } from './actualizar/actualizar.component';
 import { ComponenErrorComponent } from './componen-error/componen-error.component';
 import { DataSql } from './data.service';
 import {HttpClientModule} from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
   {path: 'contact', component: ContactComponent},
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
     QuienSomosComponent,
     ContactComponent,
     ActualizarComponent,
-    ComponenErrorComponent
+    ComponenErrorComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,FormsModule,RouterModule.forRoot(appRoutes),
