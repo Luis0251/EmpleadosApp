@@ -15,4 +15,11 @@ guardarEmpleados(empleados:Empleados[]){
     response => console.log("Se han guardado los empleados " + response),
     error => console.log("Error" + error));
 }
+
+actualizarEmpleados(indice:number,empleados:Empleados){
+let url = 'https://app-angular-376e9-default-rtdb.firebaseio.com/datos/'+indice+'json'
+this.httpClient.put(url,empleados).subscribe(
+    response => console.log("Se han actualizado los empleados " + response),
+    error => console.log("Error" + error));
+}
 }

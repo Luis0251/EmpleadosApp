@@ -36,6 +36,8 @@ export class DataService {
     newEmpleado.apellido=empleado.apellido;
     newEmpleado.cargo=empleado.cargo;
     newEmpleado.salario=empleado.salario;
+
+    this.data.actualizarEmpleados(indice,empleado); 
   }
   eliminarEm(indice:number){
     this.empleados.splice(indice,1);
